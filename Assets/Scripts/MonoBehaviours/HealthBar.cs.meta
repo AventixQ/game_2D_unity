@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: babc2d7675933dd41b20209e6e1c1760
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hitPoints: {instanceID: 0}
+  - character: {instanceID: 0}
+  - meterImage: {instanceID: 0}
+  - hpText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

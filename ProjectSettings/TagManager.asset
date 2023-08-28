@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - CanBePickedUp
+  - VirtualCamera
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - Water
   - UI
   - Blocking
-  - 
-  - 
+  - Consumables
+  - Enemies
   - 
   - 
   - 
@@ -47,6 +49,9 @@ TagManager:
     locked: 0
   - name: Others
     uniqueID: 4148837641
+    locked: 0
+  - name: Objects
+    uniqueID: 3056256935
     locked: 0
   - name: Characters
     uniqueID: 4198004319

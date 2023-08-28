@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5785907339167306101}
   - component: {fileID: 5785907339167306103}
   - component: {fileID: 5785907339167306100}
-  m_Layer: 6
+  - component: {fileID: -5182273744559547243}
+  m_Layer: 8
   m_Name: EnemyObject
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -96962977
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -1033790154, guid: cd6e22479a50dd042a7b576e3a956fdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -154,3 +155,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5182273744559547243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785907339167306096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c11d1350913f3c4093878cb10380a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHitPoints: 2
+  maxHitPoints: 2
+  characterCategory: 1
+  damageStrength: 1
