@@ -46,7 +46,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 42
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -332,16 +332,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 0, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 23
-      m_TileSpriteIndex: 28
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -423,16 +413,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: -4, y: 2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 9
-      m_TileSpriteIndex: 36
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -3, y: 2, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 9
@@ -802,7 +782,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 0944c3effeb9fcb43992e49bde89dafd, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 4ace1eddabbd909479bbda9f1b933634, type: 2}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 9c644c17639b77345829501d877b107c, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 84ada174c6026d748abb988e03c2bdd7, type: 2}
@@ -830,8 +810,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: c12fa6211259d554e8c6c697bde210c6, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: eea0e9f1f952c704bb949b2d75787bc8, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 2b17d4895eda23347be2bdea9252e2fc, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: b9c6f66332bfd174cb291e67fe11c2f5, type: 2}
   - m_RefCount: 1
@@ -921,8 +901,8 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ebcadf54aab740740841a1c99c95e479, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 930621118, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1846166206, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
   - m_RefCount: 1
@@ -978,7 +958,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1792161063, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -1560528817, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
+    m_Data: {fileID: 930621118, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -444423838, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
   - m_RefCount: 1
@@ -993,7 +973,7 @@ Tilemap:
     m_Data: {fileID: 860975392, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 853345545, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
-  - m_RefCount: 3
+  - m_RefCount: 2
     m_Data: {fileID: -1095031669, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 477535245, guid: 4b8279b8cb1269d49844124a61705c11, type: 3}
@@ -1056,7 +1036,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -52881282, guid: a5f787bea035bf04fbfdab8f0bccf924, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 74
+  - m_RefCount: 72
     m_Data:
       e00: 1
       e01: 0
@@ -1075,7 +1055,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 74
+  - m_RefCount: 72
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1195,7 +1175,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &8194790889701579099
+--- !u!114 &6972633094516897277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
