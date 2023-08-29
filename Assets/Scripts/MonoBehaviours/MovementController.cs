@@ -9,18 +9,9 @@ public class MovementController : MonoBehaviour
     Vector2 movement = new Vector2(); //przechowuje po³o¿enie obiektów gracza i przeciwnika oraz kierunki ruchów
 
     Animator animator; //zmienna do której zostanie zapisana referencja komponentu Animator
-    string animationState = "AnimationState"; //s³u¿y do odwo³ywania siê do AnimationState
 
     Rigidbody2D rb2D; //dekleracja w³aœciwoœci przechowuj¹cej referencjê do klasy Rigidbody2D
 
-    enum CharStates //deklaruje zbiór wyliczanych sta³ych
-    {
-        walkEast = 1,
-        walkWest = 2,
-        walkNorth = 3,
-        walkSouth = 4,
-        idleSouth = 5
-    }
 
     private void Start()
     {
@@ -45,27 +36,17 @@ public class MovementController : MonoBehaviour
         rb2D.velocity = movement * movementSpeed; //przemieszcza z odpowiedni¹ prêdkoœci¹
     }
 
-    private void UpdateState() //update'or poruszania siê
+    void UpdateState()
     {
-        if(movement.x > 0)
+        if (Mathf.Approximately(movement.x, 0) && Mathf.Approximately(movement.y, 0))
         {
-            animator.SetInteger(animationState, (int)CharStates.walkEast);
-        }
-        else if (movement.x < 0)
-        {
-            animator.SetInteger(animationState, (int)CharStates.walkWest);
-        }
-        else if (movement.y > 0)
-        {
-            animator.SetInteger(animationState, (int)CharStates.walkNorth);
-        }
-        else if (movement.y < 0)
-        {
-            animator.SetInteger(animationState, (int)CharStates.walkSouth);
+            animator.SetBool("isWalking", false);
         }
         else
         {
-            animator.SetInteger(animationState, (int)CharStates.idleSouth);
+            animator.SetBool("isWalking", true);
         }
+        animator.SetFloat("xDir", movement.x);
+        animator.SetFloat("yDir", movement.y);
     }
 }

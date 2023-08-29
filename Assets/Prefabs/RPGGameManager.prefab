@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe7d2c3906fa248bc39f859473ad02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraManager: {fileID: 3647971435451443280, guid: 53baa19aa0371f444a9647c31ae4e72b, type: 3}
   playerSpawnPoint: {fileID: 0}

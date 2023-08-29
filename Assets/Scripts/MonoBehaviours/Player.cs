@@ -11,22 +11,11 @@ public class Player : Character
     public Inventory inventoryPrefab;
     Inventory inventory;
 
-    /*void Start()
-    {
-
-        inventory = Instantiate(inventoryPrefab);
-        hitPoints.value = startingHitPoints;
-        healthBar = Instantiate(healthBarPrefab);
-        healthBar.character = this;
-        ResetCharacter();
-    }*/
-
-    //new
+    
     private void OnEnable()
     {
         ResetCharacter();
     }
-    //
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -69,6 +58,7 @@ public class Player : Character
     {
         while (true)
         {
+            StartCoroutine(FlickerCharacter());
             hitPoints.value = hitPoints.value - damage;
             if (hitPoints.value <= float.Epsilon)
             {
@@ -85,14 +75,14 @@ public class Player : Character
             }
         }
     }
-    //new
+
     public override void KillCharacter()
     {
         base.KillCharacter();
         Destroy(healthBar.gameObject);
         Destroy(inventory.gameObject);
     }
-    //
+
     public override void ResetCharacter()
     {
         inventory = Instantiate(inventoryPrefab);
