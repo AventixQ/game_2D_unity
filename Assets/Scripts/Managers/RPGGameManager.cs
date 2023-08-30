@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class RPGGameManager : MonoBehaviour
 {
+    //RPGCameraManager script
     public RPGCameraManager cameraManager;
+    //SpawnPoint script
     public SpawnPoint playerSpawnPoint;
-
+    //singleton instance
     public static RPGGameManager sharedInstance = null;
+
     void Awake()
     {
         if (sharedInstance != null && sharedInstance != this)
@@ -32,6 +35,7 @@ public class RPGGameManager : MonoBehaviour
 
     public void SpawnPlayer()
     {
+        //if player point is set -> spawn player and make camera follow player
         if (playerSpawnPoint != null)
         {
             GameObject player = playerSpawnPoint.SpawnObject();
@@ -40,6 +44,7 @@ public class RPGGameManager : MonoBehaviour
     }
     void Update()
     {
+        //exit game if ESC
         if (Input.GetKey("escape"))
         {
             Application.Quit();

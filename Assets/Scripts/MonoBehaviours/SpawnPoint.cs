@@ -2,7 +2,7 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject prefabToSpawn;
-    public float repeatInterval;
+    public float repeatInterval; //interval in which object should be spawned
 
     public void Start()
     {
@@ -14,8 +14,9 @@ public class SpawnPoint : MonoBehaviour
 
     public GameObject SpawnObject()
     {
-        if (prefabToSpawn != null)
+        if (prefabToSpawn != null) //if ToSpawn is assigned
         {
+            //instantiate the prefab at the spawn point's position with no rotation
             return Instantiate(prefabToSpawn, transform.position, Quaternion.identity);
         }
         return null;

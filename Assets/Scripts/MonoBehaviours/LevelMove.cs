@@ -10,7 +10,7 @@ public class LevelMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         print("Trigger Entered");
-
+        //if player enter, switch scene to scene[sceneBuildIndex]
         if (other.tag == "Player")
         {
             print("Switching Scene to " + sceneBuildIndex);

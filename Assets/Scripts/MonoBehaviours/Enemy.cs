@@ -8,18 +8,20 @@ public class Enemy : Character
 
     float hitPoints;
 
+    //override DamageCharacter function
     public override IEnumerator DamageCharacter(int damage, float interval)
     {
         while (true)
         {
+            //flickering effect when taking damage
             StartCoroutine(FlickerCharacter());
-            hitPoints = hitPoints - damage;
+            hitPoints = hitPoints - damage;     //reduce hit points
             if (hitPoints <= float.Epsilon)
             {
                 KillCharacter();
                 break;
             }
-            if (interval > float.Epsilon)
+            if (interval > float.Epsilon) //if ... wait for specified interval
             {
                 yield return new WaitForSeconds(interval);
             }
@@ -40,6 +42,7 @@ public class Enemy : Character
         ResetCharacter();
     }
 
+    //when collision with player -> damage player by 10 points
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -52,6 +55,7 @@ public class Enemy : Character
         }
     }
 
+    //stop damage
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

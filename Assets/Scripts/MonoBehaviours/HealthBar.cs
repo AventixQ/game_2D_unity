@@ -28,6 +28,7 @@ public class HealthBar : MonoBehaviour
         }
     }
 
+    //update fill of healthbar and text
     void Update()
     {
         if (character != null)

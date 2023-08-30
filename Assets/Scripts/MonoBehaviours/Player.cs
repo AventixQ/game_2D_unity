@@ -19,6 +19,7 @@ public class Player : Character
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        //if collided with coin or heart
         if (collision.gameObject.CompareTag("CanBePickedUp"))
         {
             Item hitObject = collision.gameObject.GetComponent<Consumable>().item;
@@ -36,6 +37,7 @@ public class Player : Character
                     default:
                         break;
                 }
+                //deactivate object (if needed)
                 if (shouldDisappear)
                 {
                     collision.gameObject.SetActive(false);
@@ -43,6 +45,8 @@ public class Player : Character
             }
         }
     }
+
+    //adjust hit point to player health bar
     public bool AdjustHitPoints(int amount)
     {
         if (hitPoints.value < maxHitPoints)
@@ -54,10 +58,12 @@ public class Player : Character
         return false;
     }
 
+    //coroutine of handling damage to the player
     public override IEnumerator DamageCharacter(int damage, float interval)
     {
         while (true)
         {
+            //flickering effect while taking damage
             StartCoroutine(FlickerCharacter());
             hitPoints.value = hitPoints.value - damage;
             if (hitPoints.value <= float.Epsilon)
@@ -65,6 +71,7 @@ public class Player : Character
                 KillCharacter();
                 break;
             }
+            //if ... wait for a specified interval
             if (interval > float.Epsilon)
             {
                 yield return new WaitForSeconds(interval);
@@ -76,6 +83,7 @@ public class Player : Character
         }
     }
 
+    //ovveride function to kill player character
     public override void KillCharacter()
     {
         base.KillCharacter();
@@ -83,6 +91,7 @@ public class Player : Character
         Destroy(inventory.gameObject);
     }
 
+    //rester player, healthbar, inventory
     public override void ResetCharacter()
     {
         inventory = Instantiate(inventoryPrefab);

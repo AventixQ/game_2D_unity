@@ -6,21 +6,21 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Wander : MonoBehaviour
 {
-    public float pursuitSpeed;
-    public float wanderSpeed;
-    float currentSpeed;
-    public float directionChangeInterval;
+    public float pursuitSpeed; //when pursuing targer
+    public float wanderSpeed; //when wandering
+    float currentSpeed; //current speed
+    public float directionChangeInterval; //for changing direction while wandering
     public bool followPlayer;
 
-    Coroutine moveCoroutine;
-    Rigidbody2D rb2d;
+    Coroutine moveCoroutine; //handling movement
+    Rigidbody2D rb2d; 
     Animator animator;
 
     Transform targetTransform = null;
-    Vector3 endPosition;
+    Vector3 endPosition; //target position
     float currentAngle = 0;
 
-    CircleCollider2D circleCollider;
+    CircleCollider2D circleCollider; //collider for interaction
 
     void Start()
     {
@@ -30,6 +30,8 @@ public class Wander : MonoBehaviour
         StartCoroutine(WanderRoutine());
         circleCollider = GetComponent<CircleCollider2D>();
     }
+
+    //coroutine for wandering behavior
     public IEnumerator WanderRoutine()
     {
         while (true)
@@ -55,6 +57,7 @@ public class Wander : MonoBehaviour
         return new Vector3(Mathf.Cos(inputAngleRadians),
         Mathf.Sin(inputAngleRadians), 0);
     }
+    //coroutine for implementing movement
     public IEnumerator Move(Rigidbody2D rigidBodyToMove, float speed)
     {
         float remainingDistance = (transform.position - endPosition).sqrMagnitude;
@@ -102,6 +105,8 @@ public class Wander : MonoBehaviour
             targetTransform = null;
         }
     }
+
+    //draw gizmo indication the interaction radius
     void OnDrawGizmos()
     {
         if (circleCollider != null)
@@ -109,6 +114,7 @@ public class Wander : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, circleCollider.radius);
         }
     }
+    //draw a line
     void Update()
     {
         Debug.DrawLine(rb2d.position, endPosition, Color.red);
