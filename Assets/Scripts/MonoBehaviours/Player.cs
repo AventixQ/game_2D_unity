@@ -25,8 +25,9 @@ public class Player : Character
             Item hitObject = collision.gameObject.GetComponent<Consumable>().item;
             if (hitObject != null)
             {
+                //if false -> it will not be destroyed
                 bool shouldDisappear = false;
-                switch (hitObject.itemType)
+                switch (hitObject.itemType) //checking if we can destroy it and add to health bar/inventory
                 {
                     case Item.ItemType.COIN:
                         shouldDisappear = inventory.AddItem(hitObject);
@@ -49,6 +50,7 @@ public class Player : Character
     //adjust hit point to player health bar
     public bool AdjustHitPoints(int amount)
     {
+        //if HP > HP given by heart -> return false, so heart will not disappear
         if (hitPoints.value < maxHitPoints)
         {
             hitPoints.value = hitPoints.value + amount;
@@ -65,7 +67,9 @@ public class Player : Character
         {
             //flickering effect while taking damage
             StartCoroutine(FlickerCharacter());
+            //substracting HP of player
             hitPoints.value = hitPoints.value - damage;
+            //if player has not enough HP -> kill
             if (hitPoints.value <= float.Epsilon)
             {
                 KillCharacter();
@@ -86,12 +90,14 @@ public class Player : Character
     //ovveride function to kill player character
     public override void KillCharacter()
     {
+        //run base method from class Character
         base.KillCharacter();
+        //destroy healthbar and inventory
         Destroy(healthBar.gameObject);
         Destroy(inventory.gameObject);
     }
 
-    //rester player, healthbar, inventory
+    //reset player, healthbar, inventory
     public override void ResetCharacter()
     {
         inventory = Instantiate(inventoryPrefab);

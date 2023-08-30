@@ -16,6 +16,7 @@ public class Enemy : Character
             //flickering effect when taking damage
             StartCoroutine(FlickerCharacter());
             hitPoints = hitPoints - damage;     //reduce hit points
+            //if player has not enough HP -> kill
             if (hitPoints <= float.Epsilon)
             {
                 KillCharacter();
